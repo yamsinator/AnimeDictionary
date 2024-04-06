@@ -17,11 +17,11 @@ public class Dictionary {
 	}
 
 	public List<JSONObject> searchMangaByName(String mangaName) {
-		return performSearch("anime", mangaName);
+		return performSearch("manga", mangaName);
 	}
 
 	public List<JSONObject> searchCharactersByName(String charName) {
-		return performSearch("anime", charName);
+		return performSearch("characters", charName);
 	}
 
 	public List<JSONObject> performSearch(String type, String searchQuery) {
