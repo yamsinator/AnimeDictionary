@@ -10,15 +10,27 @@ import org.json.JSONObject;
 
 public class Dictionary {
 
-	private static final String API_BASE_URL = "https://api.jikan.moe/v4/anime";
+	private static final String API_BASE_URL = "https://api.jikan.moe/v4/";
 
 	public List<JSONObject> searchAnimeByName(String animeName) {
+		return performSearch("anime", animeName);
+	}
+
+	public List<JSONObject> searchMangaByName(String mangaName) {
+		return performSearch("anime", mangaName);
+	}
+
+	public List<JSONObject> searchCharactersByName(String charName) {
+		return performSearch("anime", charName);
+	}
+
+	public List<JSONObject> performSearch(String type, String searchQuery) {
 
 		List<JSONObject> resultsList = new ArrayList<>();
 
 		try {
 			// Construct URL for anime search
-			String urlString = API_BASE_URL + "?q=" + animeName.replace(" ", "%20");
+			String urlString = API_BASE_URL + type + "?q=" + searchQuery.replace(" ", "%20");
 			URL url = new URL(urlString);
 
 			// Open connection
