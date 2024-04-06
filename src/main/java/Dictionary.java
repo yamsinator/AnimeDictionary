@@ -59,12 +59,6 @@ public class Dictionary {
 			for (int i = 0; i < results.length(); i++) {
 				JSONObject animeInfo = results.getJSONObject(i);
 
-				// Retrieve image URL and add to animeInfo
-				if (animeInfo.has("small_image_url")) {
-					String imageUrl = animeInfo.getString("small_image_url");
-					animeInfo.put("small_image_url", imageUrl); // Update small_image_url field
-				}
-
 				resultsList.add(animeInfo);
 			}
 		} catch (IOException e) {
